@@ -1,5 +1,6 @@
 #include "technical_test.h"
 
+// All this function could be cleaner
 int run(int threads_n, int numbers_per_thread)
 {
     printf("Running...\n");
@@ -22,7 +23,7 @@ int run(int threads_n, int numbers_per_thread)
     while (threads_n--)
     {
         printf("%i\n", threads_n);
-        data->seed = 42 + threads_n * 69;
+        data->seed = 42 + threads_n * 69; // not the most elegant way to have different seeds per thread but it works
         
         pthread_create(&threads[threads_n], NULL, rutine_start, data);
     }

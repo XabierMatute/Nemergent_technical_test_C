@@ -4,6 +4,8 @@ void rutine(int numbers, t_list_head *positives, t_list_head *negatives, unsigne
 {
     while(numbers--)
     {
+        // equivalent to +-1 * random positive number
+        // rand_r is thread safe but is a little obsolete, could be updated 
         int num = (2 * (rand_r(&seed) % 2) - 1) * rand_r(&seed);
         printf("inserting %i\n", num);
         if (num > 0)
