@@ -4,6 +4,12 @@ t_list *create_node(int n)
 {
     t_list *node = malloc(sizeof(t_list));
 
+    if (!node)
+    {
+        perror("malloc failed");
+        exit(EXIT_FAILURE);
+    }
+
     node->content = n;
     node->next = 0;
     return node;
@@ -14,7 +20,10 @@ t_list_head create_list()
     t_list_head head = {};
 
     if (pthread_mutex_init(&(head.mutex), NULL))
-        perror("ups");
+    {
+        perror("mutex init failed");
+        exit(EXIT_FAILURE);
+    }
     head.list = NULL;
     return head;
 }

@@ -98,4 +98,17 @@ Diseño y consideraciones importantes
 - Robustez: el programa valida los argumentos de entrada; los errores se reportan por `stderr` y se usan códigos de salida bien definidos.
 
 
+## Posibles mejoras
+
+Al realizar el proyecto en tan solo dos horas, hay cosas que se podrian mejorar o ampliar, como por ejemplo:
+
+- Escribir de una manera mas limpia y eficiente el codigo, evitando repeticiones ,mejorando la legibilidad, haciendolo mas claro y mantenible. Funciones como insert o run podrian beneficiarse estar mucho mejor.
+- Utilizar una estructura de datos mas eficiente para la insercion concurrente, como un arbol binario.
+- Se podria testear si sería mas eficiente usar un mutex por nodo en lugar de uno por lista y en caso de serlo y ser necesario implementarlo.
+- Ampliar los tests para cubrir mas casos y asegurar la robustez del programa mucho mas alla de las pruebas basicas actuales..
+- Gestionar mejor los errores de malloc y otras llamadas al sistema, para evitar salidas abruptas del programa.
+- rand_r es una funcion obsoleta, se podria usar una mejor alternativa para la generacion de numeros aleatorios en un entorno multihilo y ya de paso no generar de manera tan chapucera las seeds.
+- Revisar la seguridad general del programa mas profundamente.
+
+
 Proyecto de prueba técnica — Nemergent Solutions SL. Diciembre 2025.

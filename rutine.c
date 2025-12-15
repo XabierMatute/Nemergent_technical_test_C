@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "technical_test.h"
 
 void rutine(int numbers, t_list_head *positives, t_list_head *negatives, unsigned int seed)
