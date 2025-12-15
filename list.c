@@ -34,6 +34,7 @@ void destroy_list(t_list_head head)
     pthread_mutex_destroy(&head.mutex);
 }
 
+// this function could be cleaner
 void insert(t_list_head *head, int n)
 {
     pthread_mutex_lock(&(head->mutex));
@@ -51,7 +52,6 @@ void insert(t_list_head *head, int n)
             list = list->next;
             continue;
         }
-        printf("content %i", n);
         t_list *node = list->next;    
         list->next = create_node(n);
         list->next->next = node;
@@ -70,7 +70,6 @@ void print_list(t_list_head head)
     pthread_mutex_lock(&(head.mutex));
     t_list *list = head.list;    
 
-        printf("printin %p\n", list);
     while (list)
     {
         printf("%i\n", list->content);
