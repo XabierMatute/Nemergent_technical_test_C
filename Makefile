@@ -1,6 +1,10 @@
 NAME := technical_test
 
-SRC :=	main.c 
+SRC :=	main.c \
+		list.c \
+		run.c \
+		rutine.c \
+		
 
 HEADER := technical_test.h
 		
