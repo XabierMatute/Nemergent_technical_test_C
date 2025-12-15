@@ -40,6 +40,14 @@ void insert(t_list_head *head, int n)
     pthread_mutex_lock(&(head->mutex));
     t_list *list = head->list;
 
+    if (list && list->content > n)
+    {
+        head->list = create_node(n);
+        head->list->next = list;
+        pthread_mutex_unlock(&(head->mutex));
+        return ;
+    }
+
     while (list)
     {
         if (!list->next)
