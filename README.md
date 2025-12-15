@@ -54,6 +54,24 @@ Compilar sin flags (para comportamiento sin warnings ni sanitizers):
 make flagless
 ```
 
+Limpiar archivos compilados:
+
+```bash
+make clean
+```
+
+Limpiar todo (archivos compilados y ejecutable):
+
+```bash
+make fclean
+```
+
+Lanzar el test básico (ver sección "Pruebas básicas"):
+
+```bash
+make test
+```
+
 Uso
 ---
 El ejecutable generado se llama `technical_test`.
