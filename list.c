@@ -53,8 +53,8 @@ void insert(t_list_head *head, int n)
         }
         printf("content %i", n);
         t_list *node = list->next;    
-        list = create_node(n);
-        list->next = node;
+        list->next = create_node(n);
+        list->next->next = node;
         break;
     }
     if (!list)
